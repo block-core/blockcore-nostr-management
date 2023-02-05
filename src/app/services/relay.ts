@@ -8,6 +8,8 @@ import { RelayResponse } from './messages';
 import { Utilities } from './utilities';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { RelayType } from '../types/relay';
+import { EventService } from './event';
+import { ProfileService } from './profile';
 
 @Injectable({
   providedIn: 'root',
@@ -49,6 +51,8 @@ export class RelayService {
   relays: NostrRelay[] = [];
 
   #relaysChanged: BehaviorSubject<NostrRelay[]> = new BehaviorSubject<NostrRelay[]>(this.relays);
+  eventService: any;
+  profileService: any;
 
   get relays$(): Observable<NostrRelay[]> {
     return this.#relaysChanged.asObservable();
@@ -222,11 +226,6 @@ export class RelayService {
     // this.items2 = [];
   }
 
-  openImportSheet(data: any): void {
-    this.bottomSheet.open(ImportSheet, {
-      data: data,
-    });
-  }
 
   currentDisplayedContacts: any;
 
@@ -286,10 +285,10 @@ export class RelayService {
           }
 
           // If there are no following in the file, skip.
-          if (dialogData.pubkeys.length > 0 || dialogData.relaysCount > 0) {
-            this.currentDisplayedContacts = existingContacts;
-            this.openImportSheet(dialogData);
-          }
+          // if (dialogData.pubkeys.length > 0 || dialogData.relaysCount > 0) {
+          //   this.currentDisplayedContacts = existingContacts;
+          //   this.openImportSheet(dialogData);
+          // }
         }
 
         // // Sometimes we might discover newer or older profiles, make sure we only update UI dialog if newer.
