@@ -4,6 +4,7 @@ import { ConnectComponent } from './connect/connect';
 import { HomeComponent } from './home/home';
 import { AuthGuardService } from './services/auth-guard';
 import { LoadingResolverService } from './services/loading-resolver';
+import { LogoutComponent } from './logout/logout';
 
 const routes: Routes = [
   {
@@ -13,11 +14,16 @@ const routes: Routes = [
     resolve: {
       data: LoadingResolverService,
     },
+
   },
   {
     path: 'connect',
     component: ConnectComponent,
   },
+  {
+    path: 'logout',
+    component: LogoutComponent,
+  }
 ];
 
 @NgModule({

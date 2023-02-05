@@ -42,9 +42,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSliderModule } from '@angular/material/slider';
 import { NgxLoadingButtonsModule } from 'ngx-loading-buttons';
+import { LogoutComponent } from './logout/logout';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ConnectComponent],
+  declarations: [AppComponent, HomeComponent, ConnectComponent, LogoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
