@@ -43,9 +43,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSliderModule } from '@angular/material/slider';
 import { NgxLoadingButtonsModule } from 'ngx-loading-buttons';
 import { LogoutComponent } from './logout/logout';
+import { ProfileComponent } from './profile/profile';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ConnectComponent, LogoutComponent],
+  declarations: [AppComponent, HomeComponent, ConnectComponent, LogoutComponent, ProfileComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -85,6 +86,7 @@ import { LogoutComponent } from './logout/logout';
     MatDialogModule,
     MatDatepickerModule,
     NgxLoadingButtonsModule,
+    
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent],

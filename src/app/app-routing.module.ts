@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home';
 import { AuthGuardService } from './services/auth-guard';
 import { LoadingResolverService } from './services/loading-resolver';
 import { LogoutComponent } from './logout/logout';
+import { ProfileComponent } from './profile/profile';
 
 const routes: Routes = [
   {
@@ -23,6 +24,14 @@ const routes: Routes = [
   {
     path: 'logout',
     component: LogoutComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuardService],
+    resolve: {
+      data: LoadingResolverService,
+    },
   }
 ];
 
